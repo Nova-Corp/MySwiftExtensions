@@ -35,8 +35,7 @@ extension UIImageView {
         }
     }
     func setImage(from link: String,
-                  contentMode mode: UIView.ContentMode = .scaleAspectFit,
-                  cache: Bool = true) {
+                  contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         setImage(from: url, contentMode: mode)
     }
