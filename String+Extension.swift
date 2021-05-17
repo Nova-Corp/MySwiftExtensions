@@ -17,10 +17,7 @@ extension String {
         let regex = try? NSRegularExpression(pattern: "\\w+")
         return regex?.numberOfMatches(in: self, range: NSRange(location: 0, length: utf16.count)) ?? 0
     }
-}
-
-
-extension String {
+    
     func toDate(format: String) -> Date? {
         let df = DateFormatter()
         df.dateFormat = format
@@ -29,9 +26,12 @@ extension String {
 }
 
 extension Date {
-    func toString(format: String) -> String {
+    // MARK:- Extension for converting Date to String
+    
+    func toString(format: String, timeZone: TimeZone = .current) -> String {
         let df = DateFormatter()
         df.dateFormat = format
+        df.timeZone = timeZone
         return df.string(from: self)
     }
 }
