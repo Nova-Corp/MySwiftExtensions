@@ -25,6 +25,15 @@ extension String {
     }
 }
 
+extension UIImage {
+    // MARK:- Extension for converting Image into Base64 String
+    
+    func toBase64() -> String? {
+        guard let imageData = self.lowestQualityJPEGNSData else { return nil }
+        return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+    }
+}
+
 extension Date {
     // MARK:- Extension for converting Date to String
     
