@@ -8,6 +8,9 @@
 
 import UIKit
 
+var activityView: UIActivityIndicatorView?
+var activityBgView: UIView?
+
 extension UIViewController {
     // MARK: ViewController Instantiation
     static var identifier: String {
