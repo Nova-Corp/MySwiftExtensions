@@ -94,3 +94,9 @@ extension UIViewController {
         }
     }
 }
+
+extension DispatchQueue {
+	static func mainAsyncIfNeeded(execute work: @escaping () -> Void) {
+        Thread.isMainThread ? work() : main.async(execute: work)
+	}
+}
